@@ -28,6 +28,16 @@ class NotesHandler {
     }
   }
 
+  getNotesHandler() {
+    const notes = this._service.getNotes();
+    return {
+      status: 'success',
+      data: {
+        notes,
+      },
+    };
+  }
+
   getNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
